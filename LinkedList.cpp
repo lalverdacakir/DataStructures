@@ -56,7 +56,7 @@ void LinkedList::insert_end(int val){
 
 }
 
-void LinkedList::inset_after(int val,int after_val){
+void LinkedList::insert_after(int val,int after_val){
 	Node* temp=head;
 	Node* newNode=new Node;
 	newNode->data=after_val;
@@ -73,7 +73,7 @@ void LinkedList::inset_after(int val,int after_val){
 }
 
 void LinkedList::insert_before(int val,int before_val){
-	//dont sure if it is working
+	
 	Node* temp=head;
 	Node* newNode=new Node;
 	newNode->data=before_val;
@@ -173,24 +173,6 @@ LinkedList::~LinkedList(){
 	delete head;
 }
 int main(){
-	/*
-	LinkedList liste(5);
 	
-	liste.insert_front(10);
-	
-	liste.display();
-	liste.insert_before(10,42);
-	liste.display();
-	liste.remove(42);
-	liste.display();
-	liste.insert_front(52);
-	liste.insert_front(7);
-	liste.insert_front(5);
-	liste.insert_front(75);
-	liste.insert_front(45);
-	liste.display();
-	liste.sort();
-	liste.display();
-	*/
 	return 0;
 }
