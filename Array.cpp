@@ -47,7 +47,7 @@ void Array::del(unsigned int index){
 	for(i=index;i<cap;i++){
 		x[i]=x[i+1];
 	}
-	x[i+1];
+	
 	size--;
 }
 
@@ -84,6 +84,7 @@ void Array::disp(){
 }
 
 int main(){
+	/*
 	Array example;
 	example.add(5);
 	example.add(75);
@@ -93,6 +94,7 @@ int main(){
 	example.disp();
 	example.del(1);
 	example.disp();
+	*/
 	return 0;
 
 }
