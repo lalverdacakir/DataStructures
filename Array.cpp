@@ -5,12 +5,9 @@ int MAX=1;
 class Array{
 	double* x;
 	int size;
-	
-
 public:
 	Array(){
 		x=new double[MAX];
-
 		size=0;
 	}
 	void add(double data);
@@ -19,7 +16,6 @@ public:
 	int getIndex(double data);
 	bool isFull();
 	bool isEmpty();
-
 	void disp();
 	double maximum();
 	double minimum();
@@ -81,7 +77,6 @@ void Array::del(unsigned int index){
 	for(i=index;i<MAX;i++){
 		x[i]=x[i+1];
 	}
-	x[i+1];
 	size--;
 }
 
@@ -118,6 +113,7 @@ void Array::disp(){
 }
 
 int main(){
+	/*
 	Array example;
 	example.add(5);
 	example.add(75);
@@ -127,6 +123,7 @@ int main(){
 	example.disp();
 	example.del(1);
 	example.disp();
+	*/
 	return 0;
 
 }
