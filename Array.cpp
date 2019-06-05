@@ -6,10 +6,7 @@ class Array{
 	double* x;
 	int size;
 public:
-	Array(){
-		x=new double[MAX];
-		size=0;
-	}
+	Array();
 	void add(double data);
 	void del(unsigned int index);
 	void insert(double data,unsigned int index);
@@ -20,8 +17,17 @@ public:
 	double maximum();
 	double minimum();
 	double avg();
+	~Array();
 
 };
+Array::Array(){
+	x=new double[MAX];
+	size=0;
+}
+Array::~Array(){
+	delete[] x;
+}
+	
 double Array::maximum(){
 	int res=INT_MIN;
 	for(int i=0;i<size;i++){
