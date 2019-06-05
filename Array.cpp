@@ -1,16 +1,16 @@
 #include <iostream>
-
+#include <climits>
 using namespace std;
 int MAX=1;
 class Array{
 	double* x;
 	int size;
-	int cap;
+	
 
 public:
 	Array(){
 		x=new double[MAX];
-		cap=MAX;
+
 		size=0;
 	}
 	void add(double data);
@@ -19,10 +19,38 @@ public:
 	int getIndex(double data);
 	bool isFull();
 	bool isEmpty();
-	int capacity();
+
 	void disp();
+	double maximum();
+	double minimum();
+	double avg();
 
 };
+double Array::maximum(){
+	int res=INT_MIN;
+	for(int i=0;i<size;i++){
+		if(x[i]>res) res=x[i]; 
+	}
+	return res;
+}
+
+double Array::minimum(){
+	int res=INT_MAX;
+	for(int i=0;i<size;i++){
+		if(x[i]<res) res=x[i];
+	}
+	return res;
+}
+
+double Array::avg(){
+	int res=0;
+	for(int i=0;i<size;i++){
+		res+=x[i];
+	}
+
+	if(size!=0) return res/size;
+	else return 0;
+}
 int Array::getIndex(double data){
 	for(int i=0;i<size;i++){
 		if(x[i]==data) return i;
@@ -50,10 +78,10 @@ void Array::add(double data){
 void Array::del(unsigned int index){
 	if(index>=size) return;
 	int i=index;
-	for(i=index;i<cap;i++){
+	for(i=index;i<MAX;i++){
 		x[i]=x[i+1];
 	}
-	
+	x[i+1];
 	size--;
 }
 
@@ -90,7 +118,6 @@ void Array::disp(){
 }
 
 int main(){
-	/*
 	Array example;
 	example.add(5);
 	example.add(75);
@@ -100,7 +127,6 @@ int main(){
 	example.disp();
 	example.del(1);
 	example.disp();
-	*/
 	return 0;
 
 }
