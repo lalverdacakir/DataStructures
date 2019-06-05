@@ -16,14 +16,20 @@ public:
 	void add(double data);
 	void del(unsigned int index);
 	void insert(double data,unsigned int index);
-	void getIndex(double data);
+	int getIndex(double data);
 	bool isFull();
 	bool isEmpty();
 	int capacity();
 	void disp();
 
 };
+int Array::getIndex(double data){
+	for(int i=0;i<size;i++){
+		if(x[i]==data) return i;
+	}
 
+	return -1;
+}
 bool Array::isFull(){
 	if(size==MAX) return true;
 	return false;
