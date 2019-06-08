@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
-#define MAX 10
+
 class Stack{
-	int arr[MAX];
+	int* arr;
 	int top;
 public:
-	Stack();
+	Stack(int s);
 	void push(int val);
 	void push(int* values,int n);
 	int Top();
@@ -15,14 +15,16 @@ public:
 	void disp();
 };
 
-Stack::Stack(){
+Stack::Stack(int s){
+	size=s;
+	arr=new int[s];
 	top=-1;
 }
 int Stack::Top(){
 	return arr[top];
 }
 bool Stack::isFull(){
-	if(top==MAX-1) return true;
+	if(top==size-1) return true;
 	return false;
 }
 bool Stack::isEmpty(){

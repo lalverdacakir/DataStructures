@@ -1,9 +1,10 @@
 #include <iostream>
 #include <climits>
 using namespace std;
-#define MAX 40 
+
 class Queue{
-	int arr[MAX];
+	int* arr;
+	int size;
 	int *rear,*front;
 public:
 	Queue();
@@ -18,13 +19,15 @@ public:
 
 };
 
-Queue::Queue(){
+Queue::Queue(int s){
+	size=s;
+	arr= new int[s];
 	rear=arr;
 	front=arr;
 }
 bool Queue::isFull(){
 	int len=rear-front+1;
-	if(len==MAX) return true;
+	if(len==size) return true;
 	return false;
 
 }
