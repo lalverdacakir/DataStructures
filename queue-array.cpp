@@ -7,7 +7,7 @@ class Queue{
 	int size;
 	int *rear,*front;
 public:
-	Queue();
+	Queue(int s);
 	void add(int val);
 	void add(int* arr,int n);
 	int remove();
