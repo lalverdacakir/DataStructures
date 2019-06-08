@@ -24,6 +24,7 @@ class Stack{
 		int topElement();
 		bool isEmpty();
 		void disp();
+		~Stack();
 };
 
 
@@ -91,6 +92,16 @@ int Stack::topElement(){
 	if(!isEmpty()) return top->data;
 	
 	return INT_MIN; 
+}
+Stack::~Stack(){
+	Node* curr=head;
+	Node* next;
+	while(curr){
+		next=curr->next;
+		delete(curr);
+		curr=next;
+	}
+	top=nullptr;
 }
 int main()
 {
