@@ -170,7 +170,16 @@ bool LinkedList::isEmpty(){
 	return false;
 }
 LinkedList::~LinkedList(){
-	delete head;
+	Node* curr=head;
+	Node * next;
+	while(curr){
+		next=curr->next;
+		delete(curr);
+		curr=next;
+	}
+	head=nullptr;
+	
+	
 }
 int main(){
 	
