@@ -47,11 +47,10 @@ int Queue::remove(){
 		return *(front++);
 	return INT_MIN;
 }
-Queue::~Queue(){
-	rear=arr;
-	front=arr;
+int Queue::peek(){
+	if(!isEmpty())
+		return *front;
 }
-
 void Queue::disp(){
 	for(int* i=front;i<rear;i++){
 		cout<<*i<<" ";
@@ -59,6 +58,12 @@ void Queue::disp(){
 
 	cout<<endl;
 }
+Queue::~Queue(){
+	rear=arr;
+	front=arr;
+}
+
+
 int main(){
 	return 0;
 }
