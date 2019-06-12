@@ -26,7 +26,7 @@ Queue::Queue(int s){
 	front=arr;
 }
 bool Queue::isFull(){
-	int len=rear-front+1;
+	int len=rear-front;
 	if(len==size) return true;
 	return false;
 
